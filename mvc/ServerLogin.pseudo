@@ -1,0 +1,27 @@
+/** CHANGE: The progrm follows the need for password-based logins; however, 
+its all stored locally with the hashes and therefore is worthless.  
+Communicaiton with a third party hashing or seperated database follows Least Common Mechanism, as the 
+host computer controls less of the database, leading to more secure data. **/
+
+/** LogIntoServer is a function to retrieve login information and communicate with the server hosting databases. **/
+LogIntoServer(User, PassHash){
+Login = CommunicateWithServer(User, PassHash);
+if(Login = FALSE)
+    return 0;
+else if(Login = TRUE)
+    return 1;
+}
+
+
+/**CommunicateWithServer is a function to establish connection to the server hosting databases.  
+It is used in the LogIntoServer function.
+If using a third party authenticator, it must connect through that first.
+ **/
+ 
+CommunicateWithServer(UserName, PasswordHash){
+setup CONNECTION
+IF CONNECTION = FALSE
+    RETURN FALSE
+
+
+}

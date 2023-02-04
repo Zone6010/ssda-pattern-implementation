@@ -3,12 +3,13 @@ $username = $_POST['username'];
 $pw1 = $_POST['password1'];
 $pw2 = $_POST['password2'];
 
-// validate 
-if ($pw1 != $pw2 || !valid($pw1) || !valid($username))
-    return redirectBack(400);
+/** CHANGE: REMOVED VALIDATION FROM LOCAL DEVICE, SERVERLOGIN.PSEUDO CREATED, LOGIN FUNCTION CREATED
+validation and databases should be hosted by an outside entity for protection purposes.
+This allows us to follow the principle of Least Common Mechanism. **/
 
-// hash password
-$pwHash = hash($pw1);
+// Server Login
+LogIntoServer($username, $pw1);
+
 
 $title = "<title>Welcome $username</title>";
 
